@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+    animation: fadeSlide 1s ease;
+}
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 3%;
+    background-color: transparent;
+    filter: drop-shadow(0 0 10px #000);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo{
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.logo:hover{
+    transform: scale(1.1);
+}
+nav a{
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    font-weight: 500;
+    color: white;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+nav a:hover,
+nav a.active{
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+.COLLEGE,
+.HIGHSCHOOL,
+.ELEMENTARY{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.COLLEGE img,
+.HIGHSCHOOL img,
+.ELEMENTARY img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 25px #b74b4b;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.COLLEGE img:hover,
+.HIGHSCHOOL img:hover,
+.ELEMENTARY img:hover{
+    transform: scale(1.05);
+}
+@keyframes fadeSlide{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.menu-icon{
+    display: none;
+    font-size: 3rem;
+    color: #b74b4b;
+    cursor: pointer;
+}
+@media (max-width: 995px){
+
+    .menu-icon{
+        display: block;
+    }
+    nav{
+        position: absolute;
+        display: none;
+        top: 100%;
+        right: 5%;
+        width: 250px;
+        border: 2px solid #b74b4b;
+        border-radius: 1rem;
+        padding: 1rem;
+        background-color: #161616;
+    }
+    nav.show{
+        display: block;
+    }
+    nav a{
+        display: block;
+        font-size: 1.8rem;
+        margin: 1.5rem 0;
+        padding: 0.8rem;
+    }
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #b74b4b;
+    }
+}
+@media (max-width: 600px){
+
+    .menu-icon{
+        font-size: 2.8rem;
+    }
+    nav{
+        width: 220px;
+        right: 3%;
+    }
+    nav a{
+        font-size: 1.6rem;
+        margin: 1.2rem 0;
+    }
+    .COLLEGE img,
+    .HIGHSCHOOL img,
+    .ELEMENTARY img{
+        width: 150px;
+        height: 150px;
+    }
+}
